@@ -22,3 +22,18 @@ The CO2 factor is different: 0.10 kg per tonne-km is inside a real range publish
 L'hypothèse que je défendrais le moins bien est celle des coûts (0,12 EUR par tonne-km pour le transport et 40 EUR par tonne et par an pour le stockage).
 Ces deux chiffres ne sont pas recherchés et n'ont pas de source. Les vrais prix de transport sont commerciaux et varient beaucoup selon le véhicule, le chargement et le contrat, donc il n'existe pas de chiffre officiel unique. Un client pourrait demander « d'où vient ce chiffre ? » et je n'aurais pas de réponse. Le dashboard des coûts mène aussi à une décision directe sur l'argent (le problème vient-il du transport ou du stockage ?), donc un chiffre faux ici peut changer la décision.
 Le facteur CO2 est différent : 0,10 kg par tonne-km est dans une fourchette réelle publiée par des sources françaises (environ 0,047 à 0,12), donc je peux dire d'où il vient et le vérifier. La demande estimée à partir de la population (50 tonnes pour 1 000 habitants) est aussi une hypothèse, mais elle est au moins clairement annoncée, et elle touche les trois dashboards de la même façon. -->
+## Reflection 3 — Two KPIs that point to different actions
+
+I compare the CO2 KPI and the network-distance KPI for the same warehouse: Lille.
+
+In the CO2 view, Lille looks useless. It produces 0 kg of CO2 and 0 EUR of transport cost, because every other city is closer to Paris or Lyon, so Lille only delivers to itself. A CO2 manager looking only at this number could say "there is nothing to improve here", or even "this warehouse does nothing".
+
+In the network view, Lille is useful. If I close it, the average distance for the whole network gets worse (from 168.04 km to 174.43 km), because the 233,098 people of Lille must then be served from Paris. A network manager would say "keep Lille".
+
+So the same warehouse gives two different messages: "ignore it" in the CO2 view, and "keep it" in the network view. A route-based KPI cannot see that a warehouse also serves its own local market.
+
+<!-- Réflexion 3 — Deux indicateurs qui mènent à des actions différentes
+Je compare l'indicateur CO2 et l'indicateur de distance du réseau pour le même entrepôt : Lille.
+Dans la vue CO2, Lille semble inutile. Il produit 0 kg de CO2 et 0 EUR de coût de transport, car toutes les autres villes sont plus proches de Paris ou de Lyon, donc Lille ne livre que sa propre ville. Un responsable CO2 qui ne regarde que ce chiffre pourrait dire « il n'y a rien à améliorer ici », voire « cet entrepôt ne fait rien ».
+Dans la vue réseau, Lille est utile. Si je le ferme, la distance moyenne de tout le réseau empire (de 168,04 km à 174,43 km), car les 233 098 habitants de Lille devraient alors être servis depuis Paris. Un responsable réseau dirait « gardez Lille ».
+Un même entrepôt donne donc deux messages différents : « ignorez-le » dans la vue CO2, et « gardez-le » dans la vue réseau. Un indicateur basé sur les routes ne voit pas qu'un entrepôt sert aussi son propre marché local. -->
