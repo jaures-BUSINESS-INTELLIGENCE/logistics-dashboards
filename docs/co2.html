@@ -28,6 +28,10 @@
   <p>A ranked list of specific, actionable routes is exactly what a bar chart is for: each bar is one route someone could actually change.</p>
   <canvas id="topLinksChart" height="280"></canvas>
 
+  <h2>Which warehouse is the least CO2-efficient? (comparison → bar chart with a reference line)</h2>
+  <p>The routes above are ranked by total CO2, which favors big cities. This chart answers a different question: per tonne delivered, which warehouse emits the most? Bars compare one measure across three warehouses, and the dashed line is the network average, so you see at once who is above it. Note: Lille shows 0 because it only serves its own city (distance 0), not because it is perfectly efficient.</p>
+  <canvas id="perTonneChart" height="200"></canvas>
+
   <h2>Where emissions concentrate (spatial → scatter over a real France outline)</h2>
   <p>This decision is about geography (which <em>region</em> to target), so a plain ranking is not enough. Each city is plotted at its real coordinates, colored by its CO2 contribution, over a simplified outline of France. Existing warehouses get their own marker <em>shape</em> (a triangle), not just a color, because a shape survives grayscale printing and color-blindness. It also answers a second question at a glance: is CO2 concentrated near a warehouse (fixable by re-routing) or far from every warehouse (fixable only by opening a new one)?</p>
   <canvas id="mapChart" height="360"></canvas>
@@ -55,7 +59,25 @@ fetch('data/co2.json')
       options: { indexAxis: 'y', plugins: { legend: { display: false }, title: { display: true, text: 'Top 10 highest-CO2 routes' } } },
     });
 
-    // Graphique 2 : carte (nuage de points lon/lat) avec le contour de la France
+    // Graphique 2 (mon ajout) : CO2 par tonne livrée, par entrepôt
+    const whList = (data.by_warehouse || []).slice().sort((a, b) => b.co2_kg_per_tonne - a.co2_kg_per_tonne);
+    const avgPerTonne = data.co2_kg_per_tonne_network_avg;
+    new Chart(document.getElementById('perTonneChart'), {
+      type: 'bar',
+      data: {
+        labels: whList.map(w => w.warehouse),
+        datasets: [
+          { label: 'kg CO2 per tonne', data: whList.map(w => w.co2_kg_per_tonne), backgroundColor: whList.map((w, i) => i === 0 ? '#c0392b' : '#2e8b46') },
+          { type: 'line', label: `Network average (${avgPerTonne})`, data: whList.map(() => avgPerTonne), borderColor: '#1a1a2e', borderDash: [6, 4], pointRadius: 0, borderWidth: 2 },
+        ],
+      },
+      options: {
+        plugins: { title: { display: true, text: 'CO2 per tonne delivered, by warehouse (lower is better; red = highest)' } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'kg CO2 / tonne' } } },
+      },
+    });
+
+    // Graphique 3 : carte (nuage de points lon/lat) avec le contour de la France
     const cities = data.all_cities || [];
     const maxCo2 = Math.max(...cities.map(c => c.co2_kg), 1);
     const warehouses = cities.filter(c => c.is_warehouse);
