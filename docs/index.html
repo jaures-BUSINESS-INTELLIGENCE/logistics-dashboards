@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logistics network — three dashboards, three decisions</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+  .card { display: block; padding: 1rem 1.2rem; margin: 1rem 0; border: 1px solid #ccc; border-radius: 8px; text-decoration: none; color: inherit; }
+  .card:hover { border-color: #0d7c9e; }
+  .card h2 { margin: 0 0 0.3rem; }
+  .card .for { font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+  <h1>Same network, three different decisions</h1>
+  <p>One French logistics network (3 existing warehouses, 20 real French cities, distances computed from real coordinates). Three dashboards, each built for a different person and a different decision. Demand is estimated from population (an illustrative proxy, not real shipment data), and the cost figures are illustrative assumptions. See the README for the full reasoning.</p>
+
+  <a class="card" href="co2.html">
+    <div class="for">Sustainability / CSR manager</div>
+    <h2>CO2 dashboard</h2>
+    <p>Which routes should we prioritize to cut network CO2? A ranked bar chart plus a map-like scatter, because the decision is about both "how much" and "where".</p>
+  </a>
+
+  <a class="card" href="cost.html">
+    <div class="for">Logistics / operations manager</div>
+    <h2>Cost dashboard</h2>
+    <p>Where does cost concentrate, transport or storage, for each warehouse? A stacked bar chart plus a table of exact figures, because the decision is which lever to pull.</p>
+  </a>
+
+  <a class="card" href="network.html">
+    <div class="for">Strategic / network planning manager</div>
+    <h2>Network dashboard</h2>
+    <p>Should we open a warehouse in Bordeaux or Marseille, or close Lille? A bar chart of scenarios plus side-by-side maps, because this decision is geographic.</p>
+  </a>
+</body>
+</html>
