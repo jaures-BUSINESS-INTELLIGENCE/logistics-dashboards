@@ -37,3 +37,21 @@ Je compare l'indicateur CO2 et l'indicateur de distance du réseau pour le même
 Dans la vue CO2, Lille semble inutile. Il produit 0 kg de CO2 et 0 EUR de coût de transport, car toutes les autres villes sont plus proches de Paris ou de Lyon, donc Lille ne livre que sa propre ville. Un responsable CO2 qui ne regarde que ce chiffre pourrait dire « il n'y a rien à améliorer ici », voire « cet entrepôt ne fait rien ».
 Dans la vue réseau, Lille est utile. Si je le ferme, la distance moyenne de tout le réseau empire (de 168,04 km à 174,43 km), car les 233 098 habitants de Lille devraient alors être servis depuis Paris. Un responsable réseau dirait « gardez Lille ».
 Un même entrepôt donne donc deux messages différents : « ignorez-le » dans la vue CO2, et « gardez-le » dans la vue réseau. Un indicateur basé sur les routes ne voit pas qu'un entrepôt sert aussi son propre marché local. -->
+## Reflection 4 — Would I recommend the #1 route as it is?
+
+The #1 route in my top-10 list is Marseille <- Lyon (about 1,212 tonnes of CO2 per year). I would not recommend it to the sustainability manager without checking a few things first.
+
+First, Marseille is #1 mostly because of its large population (873,076 people), not only because of the distance. The distance (277.6 km) is shorter than Toulouse (359.9 km) or Bordeaux (435.8 km). Since demand is estimated from population (50 tonnes per 1,000 residents), the ranking depends on a proxy, not on real shipments. If Marseille's real volume is different, the ranking changes.
+
+Second, the distances are straight-line distances, not real road distances, so the real CO2 can be higher.
+
+Third, almost all the top routes come from Lyon (Marseille, Toulouse, Bordeaux, Strasbourg, Nice, Montpellier). This suggests that the real problem may be the position of the Lyon warehouse for the south of France, not one single route. Consolidating one route would not fix this.
+
+So I would use this list to decide where to look first, and I would check real shipment data before recommending an action.
+
+<!-- Réflexion 4 — Recommanderais-je la route n°1 telle quelle ?
+La route n°1 de mon top 10 est Marseille <- Lyon (environ 1 212 tonnes de CO2 par an). Je ne la recommanderais pas au responsable développement durable sans vérifier quelques points.
+D'abord, Marseille est n°1 surtout à cause de sa grande population (873 076 habitants), pas seulement à cause de la distance. La distance (277,6 km) est plus courte que celle de Toulouse (359,9 km) ou de Bordeaux (435,8 km). Comme la demande est estimée à partir de la population (50 tonnes pour 1 000 habitants), le classement dépend d'un proxy, pas de vrais envois. Si le vrai volume de Marseille est différent, le classement change.
+Ensuite, les distances sont à vol d'oiseau, pas par la route réelle, donc le vrai CO2 peut être plus élevé.
+Enfin, presque toutes les routes du haut partent de Lyon (Marseille, Toulouse, Bordeaux, Strasbourg, Nice, Montpellier). Cela suggère que le vrai problème est peut-être la position de l'entrepôt de Lyon pour le sud de la France, et non une seule route. Regrouper une route ne réglerait pas cela.
+J'utiliserais donc cette liste pour décider où regarder en premier, et je vérifierais les vrais volumes avant de recommander une action. -->
