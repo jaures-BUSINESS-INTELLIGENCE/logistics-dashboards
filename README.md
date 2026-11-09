@@ -17,7 +17,7 @@ One French logistics network (3 existing warehouses: Paris, Lyon, Lille; 20 real
 3. The three HTML pages in `docs/` read these JSON files and draw the charts with Chart.js. `docs/js/france-map-background.js` draws a simplified outline of France behind the maps.
 4. `.github/workflows/compute.yml` recomputes everything on demand (manual run) and commits the results.
 
-## Assumptions (please read)
+## Assumptions 
 
 - **Demand is a population proxy**: 50 tonnes per year per 1,000 residents. It is not real shipment data.
 - **CO2 factor**: 0.10 kg CO2e per tonne-km. It is inside a published range for road freight (about 0.047 to 0.12), but it should be checked against ADEME's current Base Empreinte before professional use.
